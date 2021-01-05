@@ -1,0 +1,8 @@
+INSERT INTO authorities(name) SELECT * FROM (SELECT 'WRITE') AS tmp WHERE NOT EXISTS (SELECT name FROM authorities WHERE name = 'WRITE') LIMIT 1;
+INSERT INTO authorities(name) SELECT * FROM (SELECT 'READ') AS tmp WHERE NOT EXISTS (SELECT name FROM authorities WHERE name = 'READ') LIMIT 1;
+INSERT INTO authorities(name) SELECT * FROM (SELECT 'READ_WRITE') AS tmp WHERE NOT EXISTS (SELECT name FROM authorities WHERE name = 'READ_WRITE') LIMIT 1;
+
+--- ROLES ---
+
+INSERT INTO authorities(name) SELECT * FROM (SELECT 'ROLE_ADMIN') AS tmp WHERE NOT EXISTS (SELECT name FROM authorities WHERE name = 'ROLE_ADMIN') LIMIT 1;
+INSERT INTO authorities(name) SELECT * FROM (SELECT 'ROLE_CUSTOMER') AS tmp WHERE NOT EXISTS (SELECT name FROM authorities WHERE name = 'ROLE_CUSTOMER') LIMIT 1;

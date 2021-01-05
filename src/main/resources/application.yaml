@@ -1,0 +1,18 @@
+spring:
+  security:
+    user:
+      name: acyuta
+      password: 1234
+  jpa:
+    hibernate:
+      ddl-auto: update
+      generate-ddl: true
+    properties:
+      hibernate.implicit_naming_strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+      hibernate.physical_naming_strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+  datasource:
+    initialization-mode: always
+    url: jdbc:mysql://localhost:3306/springsecurity
+    username: root
+    password: 1234
